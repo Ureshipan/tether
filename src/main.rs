@@ -1,3 +1,9 @@
+mod net;
+mod shard;
+use shard::Shard;
+
 fn main() {
-    println!("Hello, world!");
+    let test_shard: Shard = Shard::new("prikol".into(), "Prikol".into());
+    let summary: String = test_shard.summary();
+    println!("Summary: {summary}");
 }
