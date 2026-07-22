@@ -1,5 +1,8 @@
+use serde::{Serialize, Deserialize};
+
 pub type ShardId = String; // пока String, позже uuid
 
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Shard {
     pub id: ShardId,
     pub title: String,
@@ -8,13 +11,13 @@ pub struct Shard {
 
 impl Shard {
     pub fn new(id: ShardId, title: String) -> Self {
-        Shard {
+        return Shard {
             id,
             title,
             body: String::new(),
         }
     }
     pub fn summary(&self) -> String {
-        format!("[{}] {}", self.id, self.title)
+        return format!("[{}] {}", self.id, self.title)
     }
 }
